@@ -44,7 +44,7 @@
 (lsp-register-client
  (make-lsp-client :server-id 'ron-lsp
                   :new-connection (lsp-stdio-connection (lambda () lsp-ron-executable))
-                  :major-modes '(ron-mode)))
+                  :activation-fn (lsp-activate-on "ron")))
 
 (lsp-consistency-check lsp-ron)
 
